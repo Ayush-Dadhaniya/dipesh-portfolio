@@ -5,9 +5,9 @@ import { motion } from "framer-motion"
 export function NeonButton({ children, onClick, variant = "primary", className = "" }) {
   const colors = {
     primary: {
-      bg: "from-purple-500 to-pink-500",
-      shadow: "shadow-purple-500/50",
-      hover: "hover:shadow-purple-500/80",
+      bg: "from-blue-600 to-cyan-500",
+      shadow: "shadow-blue-500/50",
+      hover: "hover:shadow-blue-500/80",
     },
     secondary: {
       bg: "from-cyan-500 to-blue-500",

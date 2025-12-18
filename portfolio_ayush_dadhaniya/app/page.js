@@ -25,7 +25,6 @@ import AboutSection from "@/components/sections/AboutSection"
 import ProjectsSection from "@/components/sections/ProjectsSection"
 import ExperienceSection from "@/components/sections/ExperienceSection"
 import EducationSection from "@/components/sections/EducationSection"
-import CertificatesSection from "@/components/sections/CertificatesSection"
 import ContactSection from "@/components/sections/ContactSection"
 
 const AnimatedText = dynamic(() => import("@/components/animated-text").then(mod => mod.AnimatedText), { ssr: false })
@@ -41,7 +40,6 @@ const navigation = [
   { name: "Projects", href: "#projects", icon: Code },
   { name: "Experience", href: "#experience", icon: Briefcase },
   { name: "Education", href: "#education", icon: GraduationCap },
-  { name: "Certificates", href: "#certificates", icon: Award },
   { name: "Contact", href: "#contact", icon: Mail },
 ]
 
@@ -58,18 +56,20 @@ export default function Portfolio() {
   // Remove scrollToSection function
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden bg-gradient-to-br from-pink via-purple-900/20 to-pink-900/20">
+    <div className="min-h-screen relative overflow-x-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Background Effects */}
-      <ParticleField />
-      <FloatingElements />
+      <div className="fixed inset-0 z-0">
+        <ParticleField />
+        <FloatingElements />
+      </div>
 
       {/* Sidebar Navigation */}
-      <nav className="fixed top-0 left-0 h-full w-64 z-50 bg-black/30 backdrop-blur-lg border-r border-white/10 hidden md:flex flex-col justify-between py-8 px-4">
+      <nav className="fixed top-0 left-0 h-full w-64 z-50 bg-slate-950/70 backdrop-blur-lg border-r border-slate-700/30 hidden md:flex flex-col justify-between py-8 px-4">
         <div>
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="text-2xl font-bold mb-8">
             <GlitchText
-              text="Ayush Dadhaniya"
-              className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+              text="Dipesh Dadhania"
+              className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
             />
           </motion.div>
           <div className="flex flex-col gap-2">
@@ -82,7 +82,7 @@ export default function Portfolio() {
                 }}
                 className={`flex items-center gap-3 px-4 py-2 rounded-lg text-base font-medium transition-colors ${
                   activeSection === item.href.slice(1)
-                    ? "bg-purple-500/20 text-purple-400"
+                    ? "bg-blue-600/20 text-blue-400"
                     : "text-gray-300 hover:text-white hover:bg-white/10"
                 }`}
               >
@@ -93,25 +93,25 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="flex gap-3 justify-center">
-          <a href="https://github.com/Ayush-Dadhaniya" target="_blank" rel="noopener noreferrer">
-            <Github className="w-6 h-6 text-white hover:text-purple-400" />
+          <a href="https://github.com/Dipesh-Dadhania/" target="_blank" rel="noopener noreferrer">
+            <Github className="w-6 h-6 text-white hover:text-blue-400" />
           </a>
-          <a href="https://linkedin.com/in/ayushdadhaniya" target="_blank" rel="noopener noreferrer">
-            <Linkedin className="w-6 h-6 text-white hover:text-purple-400" />
+          <a href="https://www.linkedin.com/in/dipeshdadhania4/" target="_blank" rel="noopener noreferrer">
+            <Linkedin className="w-6 h-6 text-white hover:text-blue-400" />
           </a>
-          <a href="mailto:ayushdadhaniya05@gmail.com">
-            <Mail className="w-6 h-6 text-white hover:text-purple-400" />
+          <a href="mailto:dipeshdadhania4@gmail.com">
+            <Mail className="w-6 h-6 text-white hover:text-blue-400" />
           </a>
         </div>
       </nav>
 
       {/* Mobile Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-lg border-b border-white/10 md:hidden">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/70 backdrop-blur-lg border-b border-slate-700/30 md:hidden">
         <div className="flex items-center justify-between h-16 px-4">
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="text-2xl font-bold">
             <GlitchText
-              text="Ayush Dadhaniya"
-              className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+              text="Dipesh Dadhania"
+              className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
             />
           </motion.div>
           <button className="text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -124,7 +124,7 @@ export default function Portfolio() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="bg-black/40 backdrop-blur-lg"
+              className="bg-slate-950/80 backdrop-blur-lg"
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navigation.map((item) => (
@@ -202,17 +202,6 @@ export default function Portfolio() {
               transition={{ duration: 0.5 }}
             >
               <EducationSection />
-            </motion.div>
-          )}
-          {activeSection === "certificates" && (
-            <motion.div
-              key="certificates"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-            >
-              <CertificatesSection />
             </motion.div>
           )}
           {activeSection === "contact" && (

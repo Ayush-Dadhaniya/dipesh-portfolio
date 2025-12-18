@@ -1019,9 +1019,11 @@ function SplashCursor({
     }
 
     function generateColor() {
-      let c = HSVtoRGB(Math.random(), 1.0, 1.0);
-      c.r *= 0.15;
-      c.g *= 0.15;
+      // Generate professional blue/cyan tones
+      const hue = 0.5 + (Math.random() * 0.15); // Blue to cyan range (180-234 degrees)
+      let c = HSVtoRGB(hue, 0.8, 1.0);
+      c.r *= 0.08; // Reduced intensity for subtle effect
+      c.g *= 0.12;
       c.b *= 0.15;
       return c;
     }
@@ -1191,7 +1193,7 @@ function SplashCursor({
   ]);
 
   return (
-    <div className="fixed top-0 left-0 z-50 pointer-events-none w-full h-full">
+    <div className="fixed top-0 left-0 z-0 pointer-events-none w-full h-full">
       <canvas ref={canvasRef} id="fluid" className="w-screen h-screen block"></canvas>
     </div>
   );

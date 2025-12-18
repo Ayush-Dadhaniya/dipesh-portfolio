@@ -9,14 +9,12 @@ const navLinks = [
   { name: 'Education', path: '/education' },
   { name: 'Experience', path: '/experience' },
   { name: 'Projects', path: '/projects' },
-  { name: 'Certificates', path: '/certificates' },
   { name: 'Contact', path: '/contact' },
 ];
 
 const socialLinks = [
-  { name: 'GitHub', icon: Github, url: 'https://github.com/Ayush-Dadhaniya' },
-  { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com/in/ayushdadhaniya' },
-  { name: 'Instagram', icon: Instagram, url: 'https://instagram.com/ayushdadhaniya' },
+  { name: 'GitHub', icon: Github, url: 'https://github.com/Dipesh-Dadhania/' },
+  { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/dipeshdadhania4/' },
 ];
 
 export default function Navbar() {
@@ -28,8 +26,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Profile */}
           <div className="hidden sm:block">
-            <span className="text-lg font-bold text-white">Ayush Dadhaniya</span>
-            <div className="text-xs text-cyan-300">Full-Stack Developer</div>
+            <span className="text-lg font-bold text-white">Dipesh Dadhania</span>
+            <div className="text-xs text-cyan-300">Software / Web Developer</div>
           </div>
 
           {/* Desktop Nav Links */}

@@ -15,11 +15,11 @@ export function ParticleField() {
     }))
   }, [])
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute rounded-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-20"
+          className="absolute rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 opacity-15"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
@@ -28,7 +28,7 @@ export function ParticleField() {
           }}
           animate={{
             y: [0, -100, 0],
-            opacity: [0.2, 0.8, 0.2],
+            opacity: [0.1, 0.3, 0.1],
           }}
           transition={{
             duration: particle.duration,
