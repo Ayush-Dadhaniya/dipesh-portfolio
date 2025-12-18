@@ -2,11 +2,37 @@ import React from "react"
 import { GlitchText } from "@/components/glitch-text"
 import SpotlightCard from '../ui/SpotlightCard2';
 
+// Function to calculate duration between two dates
+const calculateDuration = (startDate, endDate) => {
+  const start = new Date(startDate);
+  const end = endDate === "Present" ? new Date() : new Date(endDate);
+  
+  let years = end.getFullYear() - start.getFullYear();
+  let months = end.getMonth() - start.getMonth();
+  
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+  
+  if (years === 0 && months === 0) {
+    return "Less than a month";
+  } else if (years === 0) {
+    return `${months} ${months === 1 ? 'month' : 'months'}`;
+  } else if (months === 0) {
+    return `${years} ${years === 1 ? 'year' : 'years'}`;
+  } else {
+    return `${years} ${years === 1 ? 'year' : 'years'} ${months} ${months === 1 ? 'month' : 'months'}`;
+  }
+};
+
 const experiences = [
   {
     title: "Software Engineer",
     company: "TallyGroup, Melbourne, Australia",
     period: "October 2020 – Present",
+    startDate: "2020-10-01",
+    endDate: "Present",
     points: [
       "Actively participating in Daily Stand-ups and weekly scrum to add to the growth of the current product and services.",
       "Reporting to Team lead on daily basis to discuss the progress on task assigned and having face-to-face once a week to discuss the personal growth to ensure if one is doing good in the environment, they work in.",
@@ -19,6 +45,8 @@ const experiences = [
   },
   {
     title: "Freelance Software Developer",
+    startDate: "2019-03-01",
+    endDate: "2020-10-01",
     company: "Melbourne and Sydney, Australia",
     period: "March 2019 – October 2020",
     points: [
@@ -29,6 +57,8 @@ const experiences = [
   },
   {
     title: "Front End Developer Intern (Unpaid)",
+    startDate: "2020-04-01",
+    endDate: "2020-09-01",
     company: "CyQIQ, Melbourne, Australia",
     period: "April 2020 - September 2020",
     points: [
@@ -41,7 +71,9 @@ const experiences = [
       "Working in a team of 4 developers with everyone primarily focusing on different goals to work collectively in a team and efficiently release the website for the stakeholders before the deadline."
     ],
   },
-  {
+  {startDate: "2016-08-01",
+    endDate: "2017-12-01",
+    
     title: "Software Engineer",
     company: "In-Solutions Global Pvt Ltd., Mumbai, India",
     period: "August 2016 - December 2017",
@@ -71,7 +103,10 @@ export default function ExperienceSection() {
                   <h3 className="text-xl font-bold text-white">{exp.title}</h3>
                   <p className="text-cyan-400 font-medium">{exp.company}</p>
                 </div>
-                <span className="border border-blue-400 text-blue-400 w-fit rounded px-2 py-1 text-xs font-semibold mt-2 md:mt-0">{exp.period}</span>
+                <div className="flex flex-col items-start md:items-end gap-1 mt-2 md:mt-0">
+                  <span className="border border-blue-400 text-blue-400 w-fit rounded px-2 py-1 text-xs font-semibold">{exp.period}</span>
+                  <span className="text-gray-400 text-xs italic">({calculateDuration(exp.startDate, exp.endDate)})</span>
+                </div>
               </div>
               <ul className="text-gray-300 space-y-2 list-disc list-inside">
                 {exp.points.map((point, idx) => (
