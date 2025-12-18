@@ -31,6 +31,7 @@ const experiences = [
     title: "Software Engineer",
     company: "TallyGroup, Melbourne, Australia",
     period: "October 2020 – Present",
+    link: "https://www.tally.co/",
     startDate: "2020-10-01",
     endDate: "Present",
     points: [
@@ -47,6 +48,7 @@ const experiences = [
     title: "Freelance Software Developer",
     startDate: "2019-03-01",
     endDate: "2020-10-01",
+    link:"",
     company: "Melbourne and Sydney, Australia",
     period: "March 2019 – October 2020",
     points: [
@@ -59,6 +61,7 @@ const experiences = [
     title: "Front End Developer Intern (Unpaid)",
     startDate: "2020-04-01",
     endDate: "2020-09-01",
+    link:"https://www.cyqiq.io/",
     company: "CyQIQ, Melbourne, Australia",
     period: "April 2020 - September 2020",
     points: [
@@ -73,7 +76,7 @@ const experiences = [
   },
   {startDate: "2016-08-01",
     endDate: "2017-12-01",
-    
+    link:"https://insolutionsglobal.com/",
     title: "Software Engineer",
     company: "In-Solutions Global Pvt Ltd., Mumbai, India",
     period: "August 2016 - December 2017",
@@ -101,7 +104,13 @@ export default function ExperienceSection() {
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <div>
                   <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                  <p className="text-cyan-400 font-medium">{exp.company}</p>
+                  {exp.link ? (
+                    <a href={exp.link} target="_blank" rel="noopener noreferrer" className="text-cyan-400 font-medium no-underline">
+                      {exp.company}
+                    </a>
+                  ) : (
+                    <p className="text-cyan-400 font-medium">{exp.company}</p>
+                  )}
                 </div>
                 <div className="flex flex-col items-start md:items-end gap-1 mt-2 md:mt-0">
                   <span className="border border-blue-400 text-blue-400 w-fit rounded px-2 py-1 text-xs font-semibold">{exp.period}</span>
