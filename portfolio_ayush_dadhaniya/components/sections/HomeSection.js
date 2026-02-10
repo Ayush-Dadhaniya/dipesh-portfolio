@@ -25,7 +25,7 @@ export default function HomeSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start items-center md:items-start px-2 sm:px-0">
               <a
-                href="/Dipesh Dadhania Resume 04.08.docx"
+                href="/Dipesh Dadhania Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl font-bold shadow-lg hover:scale-105 hover:shadow-blue-500/40 transition-all duration-300 group text-xs sm:text-sm md:text-base"
