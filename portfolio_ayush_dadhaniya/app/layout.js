@@ -4,6 +4,9 @@ import SplashCursor from '../components/SplashCursor';
 export const metadata = {
   title: 'Dipesh Dadhania Portfolio',
   description: 'A modern, animated, Gen-Z portfolio',
+  icons: {
+    icon: '/Create a professiona.png',
+  },
 };
 
 export default function RootLayout({ children }) {
